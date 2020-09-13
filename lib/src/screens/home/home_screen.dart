@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:job/src/model/job.dart';
 import 'package:job/src/screens/home/components/card_job_item.dart';
 import 'package:job/src/screens/home/components/content_degrade.dart';
+import 'package:job/src/screens/home/components/recent_jobs.dart';
 import 'package:job/src/screens/home/components/search_section.dart';
 import 'package:job/src/screens/home/components/section_title.dart';
 
@@ -63,34 +64,7 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(height: 30),
                 SectionTitle(text: 'Adicionados recentemente'),
                 SizedBox(height: 15),
-                Expanded(
-                  child: ListView(
-                    children: job.recentJobs
-                        .map((job) => Card(
-                              margin: EdgeInsets.only(bottom: 16),
-                              color: Color(0xFFBDD0D3),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              child: ListTile(
-                                title: Text(job.title),
-                                subtitle: Text(job.location),
-                                leading: CircleAvatar(
-                                  backgroundImage: NetworkImage(job.logo),
-                                  backgroundColor: Colors.blue,
-                                ),
-                                trailing: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Icon(job.favorite ? Icons.favorite : Icons.favorite_border),
-                                    Text(job.salary),
-                                  ],
-                                ),
-                              ),
-                            ))
-                        .toList(),
-                  ),
-                ),
+                RecentJobs(job.recentJobs),
               ],
             ),
           ),

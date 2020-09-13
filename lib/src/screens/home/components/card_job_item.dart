@@ -10,7 +10,7 @@ class CardJobItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 15),
-      width: 260,
+      width: 270,
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
@@ -27,7 +27,7 @@ class CardJobItem extends StatelessWidget {
                     backgroundColor: Colors.blue,
                   ),
                   SizedBox(width: 20),
-                  Text(job.title),
+                  Text(job.title, style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800),),
                 ],
               ),
               SizedBox(height: 22),
